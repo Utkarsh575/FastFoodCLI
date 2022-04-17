@@ -1,4 +1,5 @@
-//login user , manager
+//login  manager
+//login user
 //fill inventory
 //order menu
 #include <stdio.h>
@@ -27,7 +28,6 @@ int main(){
                 if(password=1234){
                     printf("LOGGED IN AS MANAGER\n");
                     while(true){
-
 
                         printf("|-----MANAGER---MENU---------| \n");
                         printf("|1) FILL INVENTORY ----------| \n");
