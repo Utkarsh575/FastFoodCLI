@@ -22,12 +22,14 @@ int main(){
         if(choice==1){
             while(true){
                 int password,managerChoice;
+                bool isLoggedin=false;
 
                 printf("!! ENTER THE PASSWORD !!\n");
                 scanf("%d",&password);
-                if(password=1234){
+                if(password==1234){
+                    isLoggedin=true;
                     printf("LOGGED IN AS MANAGER\n");
-                    while(true){
+                    while(isLoggedin==true){
 
                         printf("|-----MANAGER---MENU---------| \n");
                         printf("|1) FILL INVENTORY ----------| \n");
@@ -42,14 +44,16 @@ int main(){
                                 inventory[1]=100;
                                 inventory[2]=100;
                                 printf("INVENTORY HAS BEEN REPLINISHED !! \n");
-                            }else if(managerChoice==2){
-                                break;
-                            }
-
-                        else{
-                            printf("INVENTORY IS ALREADY FILLED !! \n");
-                            break;
+                                
+                                }
+                                else{
+                                printf("INVENTORY IS ALREADY FILLED !! \n");
+                                // break;
+                                }
                         }
+                        else if(managerChoice==2){
+                            isLoggedin=false;
+                            // break;
                         }
                     }
                 }else{
@@ -57,9 +61,10 @@ int main(){
                 }
             }
         }else if(choice==2){
-            printf("WELCOME USER !!\n");
+            
             while(true){
                 int userChoice,burger,fries,cola,total;
+                printf("WELCOME USER !!\n");
                 printf("1) ORDER FOOD\n");
                 printf("2) EXIT\n");
                 printf("enter a choice user :- \n");
